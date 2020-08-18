@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Ngân hàng Đông Lào Bank</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <!-- Image and text -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light static-top" style="background-color: #22b5ab !important;">
+
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./img/DL.png" alt="" style="height: 30px;"> Đông Lào Bank
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <% if(!curentUser){ %>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">Đăng Nhập</a>
+                        </li>
+                        <li>
+                            <a href="/signup" class="nav-link">Đăng Kí</a>
+                        </li>
+                        <% if(!curentAdmin){ %>
+                        <li>
+                            <a href="/admin/login" class="nav-link">Quản trị</a>
+                        </li>
+                        <% } %>
+                        <% if(curentAdmin){ %>
+                            <li>
+                                <a href="/admin/" class="nav-link">Quản trị</a>
+                            </li>
+                            <% } %>
+                        <% } %>
+                            <% if(curentUser){ %>
+                                <li class="nav-item">
+                                    <a href="/profile" class="nav-link">Tài Khoản Của Tôi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/transfer" class="nav-link">Chuyển Khoản</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Thông Báo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/logout" class="nav-link">Đăng Xuất</a>
+                                </li>
+                                <% } %>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <!-- HEADER -->
+    <div class="mdl-layout mdl-js-layout">
+        <!-- CARDS -->
+        <main class="mdl-layout__content" style="background-color: azure;">
+            <div class="page-content">
+
+                <!-- SERVICES -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Thẻ tín dụng</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Thanh toán nhanh chóng, tiện lợi mọi lúc mọi nơi cùng với thẻ tín dụng Đông Lào Banking
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                            Xem chi tiết
+      </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                    </div>
+                </div>
+
+                <!-- ABOUT -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Doanh Nghiệp</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Giải pháp tài chính và đa dạng cho doanh nghiệp
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                            Xem Chi tiết
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                    </div>
+                </div>
+
+                <!-- Portfolio -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Ngân Hàng Điện Tử</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Giao Dịch dễ dàng, an toàn bảo mật, thuận tiện mọi lúc mọi nơi!
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                            Xem Chi Tiết
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                    </div>
+                </div>
+                <!-- Portfolio -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Tuyển Dụng</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Cơ hội nghề nghiệp hấp dẫn và môi trường làm việc chuyên nghiệp dành cho bạn
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                            Xem Chi Tiết
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                    </div>
+                </div>
+                <!-- Portfolio -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Thị Trường Ngoại Hối</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Thông tin và phân tích mới nhất về thị Trường ngoại hối
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+                            Xem Chi Tiết
+                        </a>
+                    </div>
+                    <div class="mdl-card__menu">
+                    </div>
+                </div>
+            </div>
+            <%- include('footer'); -%>
+        </main>
+
+    </div>
+    </body>
+
+    </html>
